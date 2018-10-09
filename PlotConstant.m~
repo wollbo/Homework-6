@@ -1,23 +1,35 @@
 %%% PlotConstant %%%
 
 
-sign = 0
-[x0, R1, R2, N, T] = initStateAndMatrices(sign);
 
-%%
-
-x = x0
-systemPair = zeros(N, 2)
-for i = 1:N
-    % generate x
-    x = generateState(x, R1)
-    % generate y
-    y = gen(y, R2)
-    % save (x,y)
-    systemPair(i,:) = (x,y)
+sign = 1
+if sign == 1
+    [x0, R1, R2, N, T, F, H, sigmaR, sigmaV, sigmaT, sigmaP] = initStateAndMatrices(sign);
+else
+    [x0, R1, R2, N, T, F, H] = initStateAndMatrices(sign)
 end
 
-plot(systemPair(:,1), systemPair(:,2))
+x = x0
+xVec = zeros(N, 4)
+yVec = zeros(N, 2)
+for i = 1:N
+    % generate y_k
+    % generate x_k+1
+    y = generateState(x, R2, H)
+    x = generateState(x, R1, F)
+    % save (x,y)
+    xVec(i,:) = x
+    yVec(i,:) = y
+    % update R1, R2
+    [r, ~] = extractPolar(x(2), x(4))
+    [v, ~] = extractPolar(x(1), x(3))
+    R1 = generateCovariance(x(2), x(4), R1, sigmaV, sigmaT, v)
+    %R2 = 
+    
+    
+end
+
+plot(xVec(:,1)+xVec(:,3), yVec(:,1)+yVec(:,2))
     
     
     

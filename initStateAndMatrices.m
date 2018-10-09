@@ -1,4 +1,4 @@
-function [x, R1, R2, N, T] = initStateAndMatrices(option)
+function [x, R1, R2, N, T, F, H, sigmaR, sigmaV, sigmaT, sigmaP] = initStateAndMatrices(option)
 
 x = [10, 1, 20, 2]';
 
@@ -25,13 +25,13 @@ R2 = zeros(2);
 
 if option == 1
     
-    sigmaV = 0.01
-    sigmaT = 0.01
-    sigmaR = 1
-    sigmaP = 0.1
+    sigmaV = 0.01;
+    sigmaT = 0.01;
+    sigmaR = 1;
+    sigmaP = 0.1;
     
     R1(2,2) = sigmaV*(x(2)/v)^2 + sigmaT*x(4)^2;
-    R1(2,4) = (sigmaV/v^2 - sigmaP)*x(2)*x(4);
+    R1(2,4) = (sigmaV/v^2 - sigmaT)*x(2)*x(4);
     R1(4,2) = R1(2,4);
     R1(4,4) = sigmaV*(x(4)/v)^2 + sigmaT*x(2)^2;
     
@@ -43,9 +43,12 @@ if option == 1
 
 
 else
+    
     R1 = 0.1*eye(4);
     R2 = 5*eye(2);
     
 end
+
+
 end
 

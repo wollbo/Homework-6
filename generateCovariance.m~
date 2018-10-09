@@ -1,0 +1,9 @@
+function R = generateCovariance(state1, state2, covMatrix, sigma1, sigma2, space)
+
+cov
+
+ R(2,2) = sigma1*(state1/space)^2 + sigma2*state2^2;
+ R(2,4) = (sigma1/space^2 - sigma2)*state1*state2;
+ R(4,2) = R(2,4);
+ R(4,4) = sigma1*(state2/space)^2 + sigma2*state1^2;
+

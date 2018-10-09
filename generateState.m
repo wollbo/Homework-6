@@ -1,6 +1,10 @@
-function newState = generateState(state, transMatrix, R)
+function newState = generateState(state, R, transMatrix)
 
-size(R)
+L = size(R,1)
 
+% (r + e_r) * cos (phi + e_phi)
 
-newState = transMatrix*state + noise
+mu = zeros(L, 1)
+
+noise = mvnrnd(mu, R)
+newState = transMatrix*state + noise'
