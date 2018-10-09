@@ -38,7 +38,7 @@ if option == 1
     R2(1,1) = sigmaR*(x(1)/r)^2 + sigmaP*x(3)^2;
     R2(1,2) = (sigmaR/r^2-sigmaP)*x(1)*x(3);
     R2(2,1) = R2(1,2);
-    R2(2,2) = sigmaR*(x(3)/r)^2 + sigmaP*x(1)^2
+    R2(2,2) = sigmaR*(x(3)/r)^2 + sigmaP*x(1)^2;
     
 
 
