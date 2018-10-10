@@ -1,6 +1,6 @@
 %%% AverageErrorLoop %%%
 
-lim = 100; % number of runs
+lim = 1000; % number of runs
 N = 100; % length of each run
 errorVec = zeros(N,lim);
 model = 1; % real model a) or b)

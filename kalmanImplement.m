@@ -2,9 +2,9 @@ function [xVec, xhatAll] = kalmanImplement(model, updateCov, P0, x0)
 
 % VARNING
 if model == 1
-    [x0, R1, R2, N, T, F, H, sigmaR, sigmaV, sigmaT, sigmaP] = initStateAndMatrices(model);
+    [~, R1, R2, N, T, F, H, sigmaR, sigmaV, sigmaT, sigmaP] = initStateAndMatrices(model);
 else
-    [x0, R1, R2, N, T, F, H] = initStateAndMatrices(model);
+    [~, R1, R2, N, T, F, H] = initStateAndMatrices(model);
 end
 
 [xVec, yVec] = initData(model);

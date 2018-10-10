@@ -8,4 +8,4 @@ plot(meanError(:,2), 'Linewidth', 2)
 box off
 grid on
 legend('Constant Covariance', 'Updating Covariance')
-printToPdf(fig)
+%printToPdf(fig)
