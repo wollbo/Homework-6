@@ -1,4 +1,4 @@
-function [x, R1, R2, N, T, F, H, sigmaR, sigmaV, sigmaT, sigmaP] = initStateAndMatrices(option)
+function [x, R1, R2, N, T, F, H, sigmaR, sigmaV, sigmaT, sigmaP] = initStateAndMatrices(option1)
 
 x = [10, 1, 20, 2]';
 
@@ -23,7 +23,7 @@ R2 = zeros(2);
 
 
 
-if option == 1
+if option1 == 1
     
     sigmaV = 0.01;
     sigmaT = 0.01;
