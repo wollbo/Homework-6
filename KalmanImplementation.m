@@ -1,6 +1,6 @@
 %%% KalmanImplementation %%%
 
-%PlotConstant
+PlotConstant
 
 yk = yVec';
 Pkm1plus = 1000*eye(4);
@@ -30,5 +30,8 @@ for k = 1:N
     Pkm1plus = Pkplus;
 end
 
-plot(xVec(:,1),xVec(:,3), xhatAll(:,1), xhatAll(:,3), yk(1,:), yk(2,:))
-legend('True State', 'Filtered Estimate', 'Measured State')
+
+%plot(xVec(:,1),xVec(:,3), xhatAll(:,1), xhatAll(:,3), yk(1,:), yk(2,:), 'Linewidth', 2)
+%legend('True State', 'Filtered Estimate', 'Measured State')
+
+%plotEstimationErrorOverTime(xhatAll', xVec')

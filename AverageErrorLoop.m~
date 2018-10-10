@@ -1,0 +1,23 @@
+%%% AverageErrorLoop %%%
+
+lim = 1000; % number of runs
+N = 100; % length of each run
+errorVec = zeros(N,1,lim);
+
+
+for j = 1:lim
+    KalmanImplementation;
+    errorVec(:,:,j) = vecnorm(xVec'-xhatAll');
+    j
+end
+
+errorVec = squeeze(errorVec);
+meanError = mean(errorVec, 2);
+
+%%
+close all
+plot(meanError)
+hold on
+plot(errorVec(:,505))
+legend('Average Estimation Error', 'Estimation Error')
+%plotEstimationErrorOverTime(xVec', xhatAll')

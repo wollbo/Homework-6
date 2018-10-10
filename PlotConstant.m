@@ -34,8 +34,7 @@ for i = 1:N
     
 end
 
-%plot(xVec(:,1),xVec(:,3), yVec(:,1), yVec(:,2))
-%legend('True State', 'Measurement')
+
 
     
     
