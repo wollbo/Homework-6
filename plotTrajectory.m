@@ -13,4 +13,4 @@ box off
 grid on
 legend('True Trajectory', 'Measured Trajectory')
 
-printToPdf(fig);
+%printToPdf(fig);

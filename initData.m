@@ -1,6 +1,6 @@
 function [xVec, yVec] = initData(model)
 
-% model = 0 - case a), sign = 1 - case b)
+% model = 0 - case a), model = 1 - case b)
 % updateCov = 0 - fixed covariance matrices, updateCov = 1 - time varying
 % covariance matrices in Kalman
 
@@ -25,8 +25,10 @@ R20 = R2;
 for i = 1:N
     % generate y_k
     % generate x_k+1
-    y = generateState(x, R2, H);
+    
     x = generateState(x, R1, F);
+    y = generateState(x, R2, H);
+    
     % save (x,y), R1, R2
     xVec(i,:) = x;
     yVec(i,:) = y;

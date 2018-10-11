@@ -1,0 +1,18 @@
+function [xVec, xhatAll] = kalmanStationary(P0, x0)
+
+
+[~, R1, R2, N, T, F, H] = initStateAndMatrices(0);
+[xVec, yVec] = initData(0);
+
+yk = yVec';
+Pkm1plus = P0;
+xhatkm1plus = x0;
+
+
+for k = 1:N
+
+
+
+
+
+

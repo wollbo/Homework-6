@@ -12,5 +12,5 @@ box off
 grid on
 legend('Estimation Error')
 
-printToPdf(fig);
+%printToPdf(fig);
 end

@@ -1,4 +1,4 @@
-function [x, R1, R2, N, T, F, H, sigmaR, sigmaV, sigmaT, sigmaP] = initStateAndMatrices(option1)
+function [x, R1, R2, N, T, F, H, sigmaR, sigmaV, sigmaT, sigmaP] = initStateAndMatrices(option)
 
 x = [10, 1, 20, 2]';
 
@@ -17,13 +17,13 @@ H = [1 0 0 0,
 R1 = zeros(4);
 R2 = zeros(2);
 
-[r, phi] = extractPolar(x(1), x(2));
+[r, phi] = extractPolar(x(1), x(3));
 
-[v, theta] = extractPolar(x(3), x(4));
+[v, theta] = extractPolar(x(2), x(4));
 
 
 
-if option1 == 1
+if option == 1
     
     sigmaV = 0.01;
     sigmaT = 0.01;

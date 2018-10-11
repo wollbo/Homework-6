@@ -1,6 +1,6 @@
 %%% AverageErrorLoop %%%
 
-lim = 1000; % number of runs
+lim = 10000; % number of runs
 N = 100; % length of each run
 errorVec = zeros(N,lim);
 model = 1; % real model a) or b)
@@ -20,25 +20,5 @@ end
 errorVec = squeeze(errorVec);
 meanError(:,ii+1) = mean(errorVec, 2);
 end
-
+%%
 Problem2b
-
-%close all
-
-% if sign == 1 && updateCov == 1
-%     fig = figure('Name', 'HomeworkFigures/AverageErrorOverTimeb)varCov');
-%     meanErrorUpdateCov = meanError;
-% elseif sign == 1 && updateCov == 0
-%     fig = figure('Name', 'HomeworkFigures/AverageErrorOverTimeb)constCov');
-%     meanErrorConstantCov = meanError;
-% else
-%     fig = figure('Name', 'HomeworkFigures/AverageErrorOverTimea)constCov');
-% end
-% plot(meanError, 'Linewidth', 2)
-% hold on
-% box off
-% grid on
-% legend('Average Estimation Error')
-% Problem2b
-% printToPdf(fig)
-% plotEstimationErrorOverTime(xVec', xhatAll')
